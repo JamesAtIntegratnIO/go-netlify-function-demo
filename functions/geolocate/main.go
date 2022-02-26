@@ -82,7 +82,7 @@ func (g *GeoIP) GeoLocateIPHandler(address string) (err error) {
 	if strings.HasPrefix(address, "127.0.0.1") {
 		address = "github.com"
 	}
-	resp, err := http.Get("http://api.ipstack.com/" + address + "?access_key=" + accessKey)
+	resp, err := http.Get("https://api.ipstack.com/" + address + "?access_key=" + accessKey)
 	if err != nil {
 		return err
 	}
