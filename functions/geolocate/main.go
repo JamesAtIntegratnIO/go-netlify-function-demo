@@ -58,11 +58,11 @@ func GetVisitoryLambdaHandler(req events.APIGatewayProxyRequest) (*events.APIGat
 
 	err := v.Location.GeoLocateIPHandler(v.IP)
 	if err != nil {
-		return createAPIGatewayProxyResponseError(err), nil
+		return createAPIGatewayProxyResponseError(err), err
 	}
 	visitor, err := json.Marshal(v)
 	if err != nil {
-		return createAPIGatewayProxyResponseError(err), nil
+		return createAPIGatewayProxyResponseError(err), err
 	}
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
