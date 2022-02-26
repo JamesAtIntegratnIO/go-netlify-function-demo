@@ -96,6 +96,7 @@ func (g *GeoIP) GeoLocateIPHandler(address string) (err error) {
 
 	err = json.Unmarshal(body, &g)
 	if err != nil {
+		fmt.Println("Failed to unmarshel JSON")
 		return err
 	}
 
